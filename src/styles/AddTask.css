@@ -1,0 +1,140 @@
+/* AddTask.css */
+
+/* Ensure the body is not overflowing horizontally */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Main Container */
+.add-task-container {
+  padding: 20px 40px;
+ 
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Calendar and Task Sections */
+.main-content {
+  display: flex;
+  flex-wrap: wrap; /* Ensure content wraps on smaller screens */
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.calendar-section {
+  flex: 1;
+  min-width: 250px; /* Ensures it's not too small */
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.task-display {
+  flex: 2;
+  min-width: 300px; /* Responsive width */
+  background-color: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.task-buttons button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.voice-btn {
+  background-color: #526dfd;
+  color: white;
+}
+
+.add-btn {
+  background-color: #004aad;
+  color: white;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  background: white;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Responsiveness: Mobile and Tablet Screens */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .calendar-section, .task-display {
+    width: 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .task-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .task-buttons button {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  .voice-btn {
+    background-color: #4157e5;
+  }
+
+  .add-btn {
+    background-color: #003c91;
+  }
+}
+
+@media (min-width: 1024px) {
+  .calendar-section {
+    width: 350px;
+  }
+
+  .task-display {
+    width: 700px;
+  }
+
+  .task-header h2 {
+    font-size: 1.5rem;
+  }
+}

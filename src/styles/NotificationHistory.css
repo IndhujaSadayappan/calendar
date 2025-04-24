@@ -1,0 +1,190 @@
+/* Reset body margin and padding */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Notification History Container */
+.notification-history-container {
+  padding: 20px 0;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding is included within width */
+}
+
+/* Notification History Title */
+.notification-history-container h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Notification Filters */
+.notification-filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  width: 100%; /* Ensures filters take full width */
+  box-sizing: border-box;
+}
+
+/* Filter Button */
+.filter-btn {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn:hover {
+  background-color: rgba(25, 118, 210, 0.05);
+  border-color: var(--primary-color);
+}
+
+.filter-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Notification List */
+.notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%; /* Ensures list takes full width */
+  box-sizing: border-box;
+}
+
+/* Individual Notification Item */
+.notification-item {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid var(--secondary-color);
+  width: 100%; /* Ensure it takes full width and prevents overflow */
+  box-sizing: border-box;
+}
+
+.notification-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Completed Notification Item */
+.notification-item.completed {
+  border-left-color: var(--success-color);
+}
+
+/* Missed Notification Item */
+.notification-item.missed {
+  border-left-color: var(--error-color);
+}
+
+/* Notification Content */
+.notification-content {
+  flex: 1;
+}
+
+/* Notification Title */
+.notification-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+/* Notification Details */
+.notification-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.notification-details i {
+  width: 16px;
+  text-align: center;
+  margin-right: 8px;
+}
+
+/* Notification Status */
+.notification-status {
+  margin-top: 8px;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.status.completed {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--success-color);
+}
+
+.status.missed {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: var(--error-color);
+}
+
+.status.pending {
+  background-color: rgba(3, 169, 244, 0.1);
+  color: var(--secondary-color);
+}
+
+/* View Task Button */
+.view-task-btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+}
+
+.view-task-btn:hover {
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+/* No Notifications Text */
+.no-notifications {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--text-light);
+}
+
+/* Mobile Responsive Layout */
+@media (max-width: 768px) {
+  /* Adjust Notification Item Layout for Mobile */
+  .notification-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .view-task-btn {
+    align-self: flex-end;
+  }
+}

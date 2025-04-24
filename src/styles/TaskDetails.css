@@ -1,0 +1,207 @@
+.task-details-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.task-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.task-details-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+  flex: 1;
+}
+
+.task-status {
+  display: flex;
+  gap: 8px;
+}
+
+.priority-badge,
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.priority-badge.priority-high {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: var(--error-color);
+}
+
+.priority-badge.priority-medium {
+  background-color: rgba(255, 152, 0, 0.1);
+  color: var(--warning-color);
+}
+
+.priority-badge.priority-low {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--success-color);
+}
+
+.status-badge.completed {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: var(--success-color);
+}
+
+.status-badge.pending {
+  background-color: rgba(3, 169, 244, 0.1);
+  color: var(--secondary-color);
+}
+
+.task-details-content {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-weight: 500;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.info-value {
+  color: var(--text-color);
+}
+
+.info-item.summary .info-value {
+  white-space: pre-line;
+}
+
+.task-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.complete-btn,
+.edit-btn,
+.delete-btn,
+.back-btn,
+.cancel-btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+  flex: 1;
+  text-align: center;
+  min-width: 120px;
+}
+
+.complete-btn.complete {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.complete-btn.uncomplete {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.edit-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.delete-btn {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.back-btn {
+  background-color: #f5f5f5;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.cancel-btn {
+  background-color: #f5f5f5;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  margin-top: 16px;
+}
+
+.complete-btn:hover.complete {
+  background-color: #3d8b40;
+}
+
+.complete-btn:hover.uncomplete {
+  background-color: #e68900;
+}
+
+.edit-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+.back-btn:hover,
+.cancel-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.task-not-found {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.task-not-found h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: var(--text-color);
+}
+
+.task-not-found p {
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .task-details-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-actions {
+    flex-direction: column;
+  }
+
+  .complete-btn,
+  .edit-btn,
+  .delete-btn,
+  .back-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}
